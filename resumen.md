@@ -1,9 +1,12 @@
 ---
-title: Mejorando la comprensión de conceptos estadísticos mediante aplicaciones interactivas innovadoras
-author: Emilio L. Cano*, María Jesús Algar, Antonio Alonso-Ayuso, Javier M. Moguerza, Felipe Ortega
+title: Mejorando la comprensión de conceptos estadísticos mediante aplicaciones interactivas
+  innovadoras
+author: Emilio L. Cano*, María Jesús Algar, Antonio Alonso-Ayuso, Javier M. Moguerza,
+  Felipe Ortega
 output:
-  pdf_document: default
   html_document: default
+  word_document: default
+  pdf_document: default
 ---
 
 **keywords**: Aplicaciones interactivas; Enseñanza de la Estadística; Simulación; Software R
@@ -14,7 +17,7 @@ La Estadística es una materia obligatoria en los grados de Ciencias e Ingenier�
 
 La experiencia nos dice que, en muchas ocasiones, la asignatura no despierta suficiente interés entre el estudiantado. Muchas pueden ser las causas de este desinterés, entre otras las siguientes: (1) Encontrarse en primer curso, donde todavía no ven la aplicabilidad; (2) Falta de base matemática para abordar ciertos problemas; (3) Predominio de metodologías docentes clásicas frente a otras más innovadoras; (4) Predominio de las explicaciones teóricas frente al trabajo empírico; (5) Uso de ejemplos y casos de estudio genéricos o lejos de su ámbito de conocimiento.
 
-Pero independientemente de los motivos, nos gustaría destacar en este trabajo la dificultad para entender conceptos abstractos que tienen los estudiantes. Y el hecho de que esta dificultad se extiende más allá de los estudios de grado, encontrándonos egresados en distintos sectores de actividad que no son capaces de afrontar con solvencia análisis estadísticos que se supone aprendieron en su etapa en la universidad.
+Pero independientemente de los motivos, nos gustaría destacar en este trabajo la dificultad que tienen los estudiantes para entender conceptos abstractos. Y el hecho de que esta dificultad se extiende más allá de los estudios de grado, encontrándonos egresados en distintos sectores de actividad que no son capaces de afrontar con solvencia análisis estadísticos que se supone aprendieron en su etapa en la universidad.
 
 En el Grupo de Innovación Docente "Laboratorio de Ciencia de Datos para la Innovación de la Enseñanza" trabajamos para facilitar el uso de técnicas y métodos de Ciencia de Datos a la innovación de la enseñanza. En este trabajo proponemos el uso de aplicaciones interactivas innovadoras que ayuden, por un lado, a la comprensión de los conceptos estadísticos, y por otro a la mayor implicación y motivación del alumnado en las asignaturas.
 
