@@ -1,0 +1,111 @@
+---
+title: " Mejorando la comprensión de conceptos estadísticos mediante aplicaciones interactivas innovadoras"
+author: ""
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+TEXTO ANONIMIZADO (autores, citas si fuese necesario y metadatos del documento).
+
+RESUMEN
+
+El resumen serán unas 150 palabras tanto en español como en inglés (abstract).
+
+Palabras clave
+Las palabras clave son sus propias palabras claves designadas (entre 4 y 6), tanto en español como en inglés.
+
+ABSTRACT
+Lorem ipsum dolor sit amet…
+
+Keywords
+Keyword, keyword, keyword
+
+# INTRODUCCIÓN
+
+Se espera dar a estos papers una apariencia única, de alta calidad. Para ello, pedimos que los autores sigan algunas pautas sencillas. En esencia, le pedimos que utilice este documento con exactitud. La forma más sencilla de hacer esto es simplemente utilizar esta plantilla y reemplazar el contenido con su propio material.
+
+2.	TAMAÑO DE LA PÁGINA
+
+A4. Todo el material debe encajar en cada página dentro de un rectángulo de 18 x 23.5 cm (7" x 9.25"), centrado en la página, a partir de 2.54 cm (1") desde la parte superior de la página y termina en 2.54 cm (1") desde el fondo. Los márgenes derecho e izquierdo deben ser de 1.9 cm (.75”). 
+
+3.	TEXTO COMPUESTO
+
+3.1	Normal o Cuerpo del Texto
+
+Por favor, use 9 puntos Times Roman o de otro tipo de fuente romana con Serif lo más cerca posible en aspecto a Times Roman. El objetivo es tener un texto de 9 puntos, como puede ver aquí. Por favor use sans-serif o las Fuentes no proporcionales únicamente para fines especiales, como distintivo de texto de código fuente. Si Times Roman no está disponible, trate con fuente llamada Computer Modern Roman. En un Mac, utilice el nombre de la fuente Times. Los márgenes de la derecha deben ser justificados, que no sean desiguales.
+
+3.2	Título y Autores
+
+El título (Helvética de 18 puntos negrita), nombres de los autores (Helvética de 12 puntos) y afiliaciones (Helvética de 10 puntos) se ejecutan a través de todo el ancho de la página - una columna de ancho. También te recomendamos número de teléfono (Helvética de 10 puntos) y la dirección de correo electrónico (Helvética de 12 puntos). Véase la parte superior de esta página para tres direcciones. Si sólo se necesita una dirección, centrar todo el texto de la dirección. Para dos direcciones, utilizar dos fichas centradas, y así sucesivamente. Para más de tres autores, es posible que tenga que improvisar. 
+
+3.3	Referencias y Citas
+
+Las notas deben ser Times New Roman de 9 puntos, y justificado todo el ancho de la columna.        
+Utilice el estándar de comunicaciones del formato Vancouver para las referencias (Autor/es. Título. Volumen. Edición. Lugar de publicación: Editorial; año.) Vea los ejemplos de citas al final de este documento. Dentro de este archivo de plantilla, utilice el estilo denominado de referencia para el texto de la citación.
+Las referencias se encuentran también en 9 puntos de tamaño, pero esa sección (véase la sección 7) es irregular a la derecha. Las referencias deben ser materiales publicados accesibles al público. Los informes técnicos internos podrán ser citada sólo si son de fácil acceso (es decir, puede dar la dirección para obtener el informe en la citación) y puede ser obtenido por cualquier lector. Información de propiedad no podrá ser citada. Las comunicaciones privadas deben ser reconocidas, no se hace referencia (por ejemplo, "[Robertson, comunicación personal]").
+Las citas en texto se efectúan a través de llamadas con números arábigos entre paréntesis. Si se cita más de una obra en la misma frase se agruparán dentro del mismo paréntesis y se separarán con coma o guion si son correlativas. Ejemplos: (3,5) o (16-19).
+
+3.4	Numeración, encabezados y pies de página
+
+No incluya los encabezados, pies de página o números de página en su presentación. Estos se añadirán a posteriori.
+
+4.	FIGURAS
+
+Coloque las tablas / figuras / imágenes en el texto lo más cercano a la referencia de lo posible (ver Figura 1). Se puede extender a un ancho máximo de 17,78 cm (7 ").
+
+Tabla 1. Las leyendas deben estar por encima de la tabla
+Gráficos	Inicio	En el medio	Inferior
+Tablas	Fin	Últimas	Primero
+Figuras	Bueno	Similares	Muy bien
+
+Los encabezados de las tablas deben ser en Times New Roman de 9 puntos en negrita. Tanto las tablas como las figuras deben ser numeradas (ej. “Tabla 1” o “Figura 2”), debe tenerse presente que la palabra de la tabla y la figura se especifican. El pie de figura debería estar centrado debajo de la imagen o el cuadro y las leyendas de las tablas deben estar centradas sobre la tabla. 
+ 
+
+Figura 1. Título de la figura.
+
+5.	SECCIONES
+
+El título de una sección debe estar en Times New Roman negrita de 12 puntos con todas sus letras en mayúsculas alineado a la izquierda con un espacio en blanco adicional de 6 puntos antes del título de la sección. Las secciones y posteriores sub-secciones deben ser numeradas y alineadas a la izquierda. 
+5.1	Subsecciones
+
+El encabezado de los párrafos debe estar en Times New Roman de 12 puntos en negrita con sólo las letras iniciales de los mismos en mayúsculas. 
+
+5.1.1	Subsubsecciones
+
+El título de subsubsecciones debe estar en Times New Roman cursiva de 11 puntos con la letra inicial en mayúsculas y 6 puntos de espacio en blanco entre el número de la subsección y el título de la misma.
+
+5.1.1.1	Subsubsecciones
+
+El título de subsubsecciones debe estar en Times New Roman cursiva de 11 puntos con letras iniciales mayúsculas.
+
+
+5.1.1.2	Subsubseciones
+
+El título de subsubsecciones debe estar en Times New Roman cursiva de 11 puntos con letras iniciales mayúsculas.
+
+6.	CONCLUSIONES
+
+Debe escribir sus propias conclusiones sobre el artículo que ha escrito.
+
+7.	REFERENCIAS
+
+Las referencias deben redactarse siguiendo la norma Vancouver (Autor/es. Título. Volumen. Edición. Lugar de publicación: Editorial; año.) 
+
+Por ejemplo:
+
+[1] Laín Entralgo P. Historia de la medicina. Barcelona: Ediciones científicas y técnicas; 1998. 
+
+[2] Fauci AS, Kasper DL, Braunwald E, Hauser SL, Longo DL, Jameson JL, Loscalzo J, editors. Harrison’s principles of internal medicine. Vol 1. 17th ed. New York: McGraw Hill; 2008. 
+
+[3] Longo DL, Fauci AS, Kasper DL, Hauser SL, Jameson JL, Loscalzo J, editores. Harrison principios de medicina interna. Vol 2. 18a ed. México: McGraw ‐ Hill; 2012
+Ayuda sobre citas con Vancouver: https://biblioguias.uam.es/citar/estilo_vancouver
+
+
+ 
+
+ 
+
