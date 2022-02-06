@@ -3,6 +3,7 @@ title: " Mejorando la comprensión de conceptos estadísticos mediante aplicacio
 author: "Emilio L. Cano, María Jesús Algar, Antonio Alonso-Ayuso, Javier M. Moguerza, Felipe Ortega"
 date: "`r Sys.Date()`"
 output: 
+  bookdown::word_document2: default
   bookdown::html_document2: default
 language:
   label:
@@ -13,6 +14,9 @@ csl: sage-vancouver-brackets.csl
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(readxl)
+library(likert)
 ```
 
 
@@ -50,6 +54,7 @@ La Estadística es una materia obligatoria en los grados de Ciencias e Ingenier�
 La experiencia nos dice que, en muchas ocasiones, la asignatura no despierta suficiente interés entre el estudiantado. Muchas pueden ser las causas de este desinterés, entre otras las siguientes: (1) Encontrarse en primer curso, donde todavía no ven la aplicabilidad; (2) Falta de base matemática para abordar ciertos problemas; (3) Predominio de metodologías docentes clásicas frente a otras más innovadoras; (4) Predominio de las explicaciones teóricas frente al trabajo empírico; (5) Uso de ejemplos y casos de estudio genéricos o lejos de su ámbito de conocimiento.
 
 Pero independientemente de los motivos, nos gustaría destacar en este trabajo la dificultad que tienen los estudiantes para entender conceptos abstractos. Y el hecho de que esta dificultad se extiende más allá de los estudios de grado, encontrándonos egresados en distintos sectores de actividad que no son capaces de afrontar con solvencia análisis estadísticos que se supone aprendieron en su etapa en la universidad.
+Mirando hacia atrás, en [@naya2012estadistica] podemos encontrar algunas reflexiones sobre las carencias que históricamente se arrastran en la enseñanza de la Estadística en etapas preuniversitarias.
 
 En el Grupo de Innovación Docente "Laboratorio de Ciencia de Datos para la Innovación de la Enseñanza" trabajamos para facilitar el uso de técnicas y métodos de Ciencia de Datos a la innovación de la enseñanza. En este trabajo proponemos el uso de aplicaciones interactivas innovadoras que ayuden, por un lado, a la comprensión de los conceptos estadísticos, y por otro a la mayor implicación y motivación del alumnado en las asignaturas.
 
@@ -111,31 +116,44 @@ knitr::include_graphics("monty.png")
 
 # RESULTADOS
 
-Los resultados que obtenemos en las clases son muy positivos. Los estudiantes pueden elegir cuáles son las opciones (no solo dos, sino más de dos, como por ejemplo en el lanzamiento de un dado) y comprueban con ejemplos más cercanos cómo la probabilidad “converge” a la probabilidad teórica, y esto después se traduce en que realizan los ejercicios con menos dudas.
+Los resultados que obtenemos en las clases son muy positivos. En la primera aplicación, los estudiantes pueden elegir cuáles son las opciones (no solo dos, sino más de dos, como por ejemplo en el lanzamiento de un dado) y comprueban con ejemplos más cercanos cómo la probabilidad “converge” a la probabilidad teórica, y esto después se traduce en que realizan los ejercicios con menos dudas.
 
+En el curso 2021/2022 se ha recogido retroalimentación de los estudiantes del Grado en Biología cursando la asignatura Bioestadística. El reto en esta asignatura es todavía mayor, ya que es una asignatura con solo 3 créditos (30 horas de clase) con un temario incluso más amplio que en otros grados de ciencias o ingeniería. 
+```{r likert, fig.cap="Valoración de distintos elementos de la metodología docente", fig.width=9, echo=FALSE}
+encuesta <- read_excel("BIOESTADÍSTICA 2021-22 (respuestas).xlsx") |> 
+  mutate(across(2:6, ~factor(., levels = 1:5, labels = c(" 1 (Nada)", "2", "3", "4", "5 (Mucho)"))))
+items <- tibble(item = paste0("ITEM_", 
+                              formatC(1:ncol(encuesta), 
+                                      width = 2, flag = 0)), 
+                pregunta = colnames(encuesta),
+                elemento_evaluado = c("_timestamp", 
+                                      "Cumplimiento objetivos nota",
+                                      "Cumplimiento aprendizaje estadística",
+                                      "Guía de evaluación exámenes ayuda",
+                                      "Guía de evaluación trabajos ayuda",
+                                      "La aplicación ayuda a comprender probabilidad",
+                                      "_comments")) 
+colnames(encuesta) <- items$elemento_evaluado
+kk <- likert.options(legend = "Respuesta")
+lbio <- likert(as.data.frame(encuesta[,2:6]))
+plot(lbio) + 
+  guides(fill = guide_legend(title = "Respuesta: ")) +
+  labs(title = "Valoración de metodologías docentes Bioestadística",
+       y = "Porcentaje")
+```
 
-(meter lo que tenga de la encuesta a los de biología)
+El instrumento utilizado para la recogida de información fue un formulario en Google Docs, fuera del aula virtual para garantizar el total anonimato, e incluía también una pregunta abierta de sugerencias o comentarios. El grupo era de 70 estudiantes, aunque la respuesta fue baja (12 respuestas). Aún así, la información que nos proporciona es muy valiosa. Por una parte, la mayoría de los estudiantes (58%) dio una respuesta positiva a la pregunta sobre si la aplicación de probabilidad como frecuencia en el límite le ayudó a comprender mejor el concepto. No obstante, también vemos que hay un amplio margen de mejora, puesto que el porcentaje de respuestas negativas (33%) todavía es muy alto. En relación a las otras metodologías por las que se les preguntó, valoraron muy positivamente las guías de evaluación en trabajos y exámenes y su retroalimentación. Podemos observar también que su percepción del aprendizaje estuvo por encima de su expectativa en la calificación.
+
 
 # CONCLUSIONES
 
-Es importante destacar que la metodología propuesta no es exclusiva para la enseñanza de la Estadística, sino que se puede aplicar a cualquier asignatura en la que se puedan utilizar datos, funciones matemáticas, gráficos, o simulación, y en las que la interacción del estudiante provoque distintos resultados que le ayuden a interiorizar los conceptos.
+La principal conclusión de este trabajo es que las aplicaciones interactivas que incluyen simulación contribuyen a mejorar el aprendizaje de conceptos abstractos de Estadística.
+Es importante destacar que la metodología propuesta no es exclusiva para la enseñanza de la Estadística, sino que se puede aplicar a cualquier asignatura en la que se puedan utilizar datos, funciones matemáticas, gráficos, o simulación, y en las que la interacción del estudiante provoque distintos resultados que le ayuden a interiorizar los conceptos. Un ejemplo en criptografía se puede encontrar en la aplicación para encriptar con el código César que se encuentra en https://elcano.shinyapps.io/cesar/. Por otra parte, en asignaturas que impliquen la gestión de proyectos, se pueden aprovechar sinergias con metodologías ágiles como Scrum [@Cano2016] para incluir la simulación en la asunción de roles.
 
-integración continua
+Como trabajo futuro, el Grupo de Innovación Docente "Laboratorio de Ciencia de Datos para la Innovación de la Enseñanza" está ya trabajando en desplegar estas y futuras aplicaciones en el servidor propio del grupo, e implementar integración y despliegue continuo desde los repositorios de GitHub para un mantenimiento más ágil. Asimismo, está previsto la mejora visual de las aplicaciones más sencillas, así como su versión en español.
 
-mejorar aspecto
-
-servidor DSLAB
-
-versiones en español
-
-(expandir un poco)
-
-Un poco de autobombo: [@Cano2016]
 
 # REFERENCIAS
-
-Naya, S, Rios, M. y L. Zapata. (2012). La Estadistica en la Enseñanza Preuniversitaria. La Gaceta de la
-RSME, Vol. 15, No. 2, 355-368.
 
 
 ```{r include=FALSE}
