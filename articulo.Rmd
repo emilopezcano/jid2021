@@ -2,7 +2,11 @@
 title: " Mejorando la comprensión de conceptos estadísticos mediante aplicaciones interactivas innovadoras"
 author: "Emilio L. Cano, María Jesús Algar, Antonio Alonso-Ayuso, Javier M. Moguerza, Felipe Ortega"
 date: "`r Sys.Date()`"
-output: html_document
+output: 
+  bookdown::html_document2: default
+language:
+  label:
+    fig: 'Figura '
 bibliography: [article.bib, packages.bib]
 csl: sage-vancouver-brackets.csl
 ---
@@ -37,9 +41,9 @@ Interactive applications, Statistical teaching, Simulation, R Software
 
 
 
-# 1. INTRODUCCIÓN
+# INTRODUCCIÓN
 
-## 1.1. La Estadística como enseñanza transversal
+## La Estadística como enseñanza transversal
 
 La Estadística es una materia obligatoria en los grados de Ciencias e Ingeniería, así como en muchos grados de Ciencias Sociales. Así, es un campo de conocimiento transversal que se aplica a una multitud de problemas de diversa índole, pero que se pueden abordar con la misma técnica estadística.
 
@@ -49,70 +53,84 @@ Pero independientemente de los motivos, nos gustaría destacar en este trabajo l
 
 En el Grupo de Innovación Docente "Laboratorio de Ciencia de Datos para la Innovación de la Enseñanza" trabajamos para facilitar el uso de técnicas y métodos de Ciencia de Datos a la innovación de la enseñanza. En este trabajo proponemos el uso de aplicaciones interactivas innovadoras que ayuden, por un lado, a la comprensión de los conceptos estadísticos, y por otro a la mayor implicación y motivación del alumnado en las asignaturas.
 
-## 1.2. Estado del arte
+## Estado del arte
 
-(falta entero) buscar cosas de matlab, y otros softwares, y por supuesto de R.
+En la literatura podemos encontrar numerosos trabajos [@Moore1997;@Hogg1985;@Romeu2006;@Romeu2012] que abogan por orientar la enseñanza de la estadística desde un enfoque más práctico, disminuyendo en cierta medida el enfoque teórico que se le da a esta materia. En [@Romeu2006], Romeu evalúa diversas formas de mejorar la educación estadística en la rama de ingeniería, denunciando que uno de los principales problemas es que los cursos de estadística que se ofrecen a los estudiantes son muy teóricos, con apenas práctica, y, en muchas ocasiones, tratan de cubrir un amplio temario en poco tiempo. Por lo que, finalmente los estudiantes no perciben la estadística como una herramienta que vayan a necesitar en el desarrollo de su vida profesional.
 
-En la literatura podemos encontrar numerosos trabajos [@Moore1997], [@Hogg1985], [@Romeu2006], [@Romeu2012] que abogan por orientar la enseñanza de la estadística desde un enforque más práctico, disminuyendo en cierta medida el enforque teórico que se le da a esta materia. En [@Romeu2006], Romeu evalúa diversas formas de mejorar la educación estadística en la rama de ingeniería, denunciando que uno de los principales problemas es que los cursos de estadística que se ofrecen a los estudiantes son muy teóricos, con apenas práctica, y, en muchas ocasiones, tratan de cubrir un amplio temario en poco tiempo. Por lo que, finalmente los estudiantes no perciben la estadística como una herramienta que vayan a necesitar en el desarrollo de su vida profesional.
-
-Tradicionalmente, en Europa se ha optado por enseñar la estadística desde un punto de vista más teórico, otorgando de una gran relevancia a los teoremas y sus correspondientes demostraciones teóricas. Sin embargo, el enforque que se le ha dado en EEUU es más práctico [@El1990]. Presentan la materia como una herramienta de investigación muy versátil, en el sentido de que se aplica en multitud de áreas de conocimiento: ingeniería, medicina, economía, psicología, periodismo, sociología, etc.
+Tradicionalmente, en Europa se ha optado por enseñar la estadística desde un punto de vista más teórico, otorgando de una gran relevancia a los teoremas y sus correspondientes demostraciones teóricas. Sin embargo, el enfoque que se le ha dado en EEUU es más práctico [@El1990]. Presentan la materia como una herramienta de investigación muy versátil, en el sentido de que se aplica en multitud de áreas de conocimiento: ingeniería, medicina, economía, psicología, periodismo, sociología, etc.
 
 Con el fin de darle más énfasis a un enfoque práctico de la estadística, una solución accesible es optar por el uso de una herramienta informática. El abanico de opciones es tan amplio que conviene realizar un análisis detallado de algunas de ellas. Por un lado, tenemos potentes herramientas de cómputo desarrolladas por empresas privadas, como:
 
 -	Statistical Analysis System (SAS). Es un paquete software desarrollado por SAS Institute capaz de realizar análisis estadísticos básicos, análisis multivariantes e incluso análisis predictivo. 
 -	SPSS. Se trata de otro software comercial de análisis estadístico muy completo y avanzado. Por lo que no está pensado para usuarios noveles. Es ampliamente usado en el ámbito profesional. 
--	Minitab. Es un potente software de pago para análisis estadístico. Fue desarrollado en la Universidad del Estado de Pensilvania por Barbara F. Ryan, Thomas A. Ryan, Jr. Y Brian L. Joiner en 1972. Está más enfocado a un uso empresarial que didáctico. Lo cual no quita que se hayan llevado a cabo experiencias docentes satisfactorias como él. En este trabajo [@Romeu1998], los autores muestran un ejemplo de aplicación del aprendizaje cooperativo en estudiantes de carreras no matemáticas con el fin de promover entre ellos el interés en un curso de estadística. De las encuestas que realizaron los estudiantes una vez finalizadas todas las sesiones de laboratorio, destacaron como uno de los aspectos más positivos de la experiencia la comprensión del material de clase, llegando a conectar perfectamente los aspectos teóricos con las aplicaciones gracias al uso del software.
--	Statistics Problem Solver. Es un software informático que además de resolver los problemas de estadística, ofrece una explicación paso a paso sobre cómo se ha resuelto, mostrando las fórmulas y teoremas que se han empleado en el proceso. Tan solo hay que rellenar los cuadros en blanco con los datos del problema que queremos resolver. Está diseñado en base al curso de “Estadística y Probabilidad” de la Universidad de Ottawa (MAT2377), por lo que es especialmente recomendable para estudiantes universitarios. Los algoritmos de solución que emplea el software están basados en el libro “Métodos estadísticos para ingenieros” de G. Geoffrey Vining, Duxbury, 1998. Con este software se pueden generar histogramas, analizar distribuciones discretas y continuas, realizar pruebas de hipótesis y comparar datos estadísticos.
+-	Minitab. Es un potente software de pago para análisis estadístico. Fue desarrollado en la Universidad del Estado de Pensilvania por Barbara F. Ryan, Thomas A. Ryan, Jr. Y Brian L. Joiner en 1972. Está más enfocado a un uso empresarial que didáctico. Lo cual no quita que se hayan llevado a cabo experiencias docentes satisfactorias con él. En el trabajo [@Romeu1998], los autores muestran un ejemplo de aplicación del aprendizaje cooperativo en estudiantes de carreras no matemáticas con el fin de promover entre ellos el interés en un curso de estadística. De las encuestas que realizaron los estudiantes una vez finalizadas todas las sesiones de laboratorio, destacaron como uno de los aspectos más positivos de la experiencia la comprensión del material de clase, llegando a conectar perfectamente los aspectos teóricos con las aplicaciones gracias al uso del software.
+-	Statistics Problem Solver. Es un software informático que además de resolver los problemas de estadística, ofrece una explicación paso a paso sobre cómo se ha resuelto, mostrando las fórmulas y teoremas que se han empleado en el proceso. Tan solo hay que rellenar los cuadros en blanco con los datos del problema que queremos resolver. Está diseñado en base al curso de "Estadística y Probabilidad" de la Universidad de Ottawa (MAT2377), por lo que es especialmente recomendable para estudiantes universitarios. Los algoritmos de solución que emplea el software están basados en el libro [@vining1998statistical] de G. Geoffrey Vining. Con este software se pueden generar histogramas, analizar distribuciones discretas y continuas, realizar pruebas de hipótesis y comparar datos estadísticos.
 
 Uno de los principales inconvenientes que podemos encontrar en estas herramientas, desde un punto de vista docente, es que todas son de pago y es necesario adquirir una licencia. Sin embargo, puesto que nuestro principal interés es motivar a nuestros estudiantes y facilitar su proceso de aprendizaje, podemos encontrar otras opciones que no requieran un desembolso importante. Por ejemplo, Stats Solver (https://www.statssolver.com/) es una página web a la que podemos acceder desde cualquier navegador y nos permite resolver cualquier problema estadístico que se pueda plantear en un curso universitario de estadística. En el menú desplegable que aparece en la parte superior se selecciona el tipo de problema estadístico que se quiere resolver y, a continuación, se introducen los datos en los cuadros de texto en blanco. Al presionar en Solve, nos muestra la solución junto con una explicación teórica de cómo debe resolverse. En este sentido, podemos decir que es una herramienta muy didáctica y fácil de usar. También cabe destacar que, al no requerir instalación ninguna, tampoco consume recursos de CPU ni memoria de nuestro ordenador.
 
-Pero si queremos dar rienda suelta a nuestra capacidad de análisis, Stats Solver se nos queda corto, ya que no nos permite construir nuestras propias soluciones. No buscamos enseñar a nuestros estudiantes el manejo de un software estadístico, sino completar las explicaciones con casos prácticos y conseguir que los estudiantes, mediante su propia experiencia, asimilen mejor los conceptos y su aplicabilidad. Podemos pensar, entonces, en	R [@R-base], un lenguaje de programación estadístico. La primera versión fue creada en la Universidad de Auckland, Nueva Zelanda en la década de los 90 por Robert Gentleman y Robert Ihaka. En la actualidad se considera la herramienta de análisis estadístico por excelencia, ampliamente utilizada tanto en el ámbito docente como en el empresarial. Con este lenguaje podemos llevar a cabo cualquier análisis estadístico por complicado que sea.
+Pero si queremos dar rienda suelta a nuestra capacidad de análisis, Stats Solver se nos queda corto, ya que no nos permite construir nuestras propias soluciones. No buscamos enseñar a nuestros estudiantes el manejo de un software estadístico, sino completar las explicaciones con casos prácticos y conseguir que los estudiantes, mediante su propia experiencia, asimilen mejor los conceptos y su aplicabilidad. Podemos pensar, entonces, en R [@R-base], un lenguaje de programación estadístico. La primera versión fue creada en la Universidad de Auckland, Nueva Zelanda en la década de los 90 por Robert Gentleman y Robert Ihaka, a partir del lenguaje S desarrollado, entre otros, por John Chambers [chambers2008software]. En la actualidad se considera la herramienta de análisis estadístico por excelencia, ampliamente utilizada tanto en el ámbito docente como en el empresarial. Con este lenguaje podemos llevar a cabo cualquier análisis estadístico por complicado que sea.
 
 Todas estas herramientas de ordenador han sido diseñadas con un propósito general, poder resolver problemas estadísticos. En este sentido podemos decir que cumplen con creces su propósito. Pero este no es nuestro objetivo. No buscamos una herramienta de cómputo potente que nos permita llevar a cabo cualquier análisis estadístico, sino que lo que buscamos es una herramienta didáctica que ayude a nuestros estudiantes a entender la estadística y saber aplicarla a la vida real. Con R podemos implementar nuestras propias aplicaciones, centradas en la adquisición de conceptos determinados sin que los estudiantes tengan que enfrentarse a la complejidad que suponga el manejar una herramienta software de análisis estadístico.
 
-Por este motivo hemos desarrollado nuestra propia herramienta… que consiste en… hemos usado…
+Por este motivo hemos desarrollado algunas aplicaciones específicas utilizando el paquete shiny [@R-shiny] de R. Una de las mayores potencialidades de estas aplicaciones es que podemos programar simulaciones de variables aleatorias, de forma que el estudiante puede después reproducir los "experimentos" y convertirlos así en una experiencia propia. 
 
 
-Un poco de autobombo: [@Cano2016]
+# METODOLOGÍA
 
-Citar R y paquetes: , [@R-shiny], ...
-
-# 2. METODOLOGÍA
-
-## 2.1. Material y métodos
+## Material y métodos
 
 Para el desarrollo de las aplicaciones interactivas, utilizamos el software estadístico y lenguaje de programación R (https://www.r-project.org). R es desde hace años el estándar "de facto" para análisis de datos. No obstante, al ser también lenguaje de programación, sus posibilidades son ilimitadas, como demuestran los más de 18.000 paquetes desarrollados por la comunidad para una gran variedad de dominios de aplicación. Algunos paquetes constituyen auténticos "frameworks" para el desarrollo de aplicaciones, como es el caso del paquete "shiny" (https://shiny.rstudio.com). Con shiny podemos desarrollar aplicaciones interactivas que se ejecutan en el navegador, sin necesidad de saber programar páginas web. Todo se genera mediante funciones de R de forma análoga a como se haría un análisis de datos.
 
-En este trabajo presentamos una aplicación para ilustrar la definición de probabilidad como frecuencia relativa en el límite. Un ejemplo clásico sería lanzar una moneda al aire repetidas veces y contar el número de caras que salen en una sucesión de n "experimentos". La probabilidad de obtener cara sería, asintóticamente, el número de caras dividido entre el total de tiradas. Una actividad "manipulativa" podría consistir en poner a los estudiantes a lanzar monedas, anotar las caras y hacer los cálculos. Pero llevaría demasiado tiempo para un concepto básico. 
-
 Los métodos y herramientas de Ciencia de Datos, como la simulación y el software estadístico R, nos permiten simular cualquier experimento aleatorio, un número grande de veces, y personalizando para cada dominio de aplicación.
+En las aplicaciones que hemos desarrollado tiene un gran protagonismo la **simulación**. Una parte importante de la estadística consiste en modelizar fenómenos aleatorios para poder estudiarlos y tomar decisiones. R contiene una gran variedad de funciones para generar realizaciones de variables aleatorias y así poder simular cualquier experimento o fenómeno que queramos utilizar para enseñar un método o concepto estadístico. La principal ventaja es que cada vez que vayamos a ejecutar la aplicación, será una experiencia nueva, y se podrán relacionar los resultados con el método o concepto, más allá de los datos concretos de un ejercicio.
 
-(expandir un poco)
+Para el desarrollo de las aplicaciones, usamos un enfoque reproducible y colaborativo, con el entorno de desarrollo (IDE por sus siglas en inglés) RStudio (https://www.rstudio.com) [@R-rstudioapi]. RStudio se integra muy bien con el sistema de control de versiones git (https://git-scm.com) y los repositorios de GitHub (https://github.com), lo que nos permite trabajar en equipo de forma eficiente y llevar un control exhaustivo de versiones. El código fuente de las aplicaciones está en repositorios públicos y abierto a la contribución de otros. Las aplicaciones están publicadas en el servicio de RStudio shinyapps.io (https://www.shinyapps.io). No obstante, se puede ejecutar en cualquier ordenador con R y los paquetes utilizados por la aplicación.
 
-## 2.2. Aplicaciones
+A continuación describimos dos aplicaciones. La primera la utilizamos para ilustrar la definición de probabilidad como frecuencia relativa en el límite. Un ejemplo clásico sería lanzar una moneda al aire repetidas veces y contar el número de caras que salen en una sucesión de n "experimentos". La probabilidad de obtener cara sería, asintóticamente, el número de caras dividido entre el total de tiradas. Una actividad "manipulativa" podría consistir en poner a los estudiantes a lanzar monedas, anotar las caras y hacer los cálculos. Pero llevaría demasiado tiempo para un concepto básico. La segunda aplicación es un poco más compleja, como también lo es el concepto que enseñamos: la probabilidad condicionada. En este caso utilizamos el famoso problema de _Monty Hall_, descrito en muchos libros, como por ejemplo [@YUSTE2011] y que incluso aparece en obras de ficción como "El curioso incidente del perro a medianoche" o la película "21 Blackjack". 
 
-Hemos desarrollado una aplicación interactiva para explicar este importante concepto, que está publicada en https://elcano.shinyapps.io/probability_as_relative_frequency/. La ventaja frente al ejemplo de la moneda, es que podemos utilizar “sucesos” más próximos a los intereses de los estudiantes. Por ejemplo, en el grado en Videojuegos podemos hablar de la probabilidad de que aparezca un atacante o un defensor; en el grado en Biología, podemos hablar de la probabilidad de que un tratamiento sea efectivo o no; y así sucesivamente.
 
-(meter la de Monty Hall y alguna otra)
+## Aplicaciones
 
-```{r}
+La aplicación "Relative frequency approach to Probability" ilustra el importante concepto de probabilidad como frecuencia relativa en el límite. Está publicada en https://elcano.shinyapps.io/probability_as_relative_frequency/. La ventaja frente al ejemplo de la moneda, es que podemos utilizar “sucesos” más próximos a los intereses de los estudiantes. Por ejemplo, en el grado en Videojuegos podemos hablar de la probabilidad de que aparezca un atacante o un defensor; en el grado en Biología, podemos hablar de la probabilidad de que un tratamiento sea efectivo o no; y así sucesivamente.
+La aplicación (veáse la Figura \@ref(fig:freq)) consta de un menú lateral donde se introducen los elementos equiprobables que se quieren simular, y el elemento del que se quiere calcular la probabilidad. A continuación, el tamaño de muestra (número de experimentos) y la semilla, que se fija para que el experimento sea reproducible. El gráfico del panel principal de la aplicación se actualiza automáticamente, simulando el número de experimentos y calculando la frecuencia relativa después de cada tirada. Se representa como un gráfico secuencial donde se ve claramente cómo la frecuencia relativa converge a la probabilidad teórica. Por defecto, en la aplicación se muestra el conjunto de dos valores posibles: "man" y "woman", pero como se ha dicho se puede personalizar el ejemplo (incluso al clásico del lanzamiento de un dado o una moneda).
+
+
+```{r freq, fig.cap="Aplicación para ilustrar la probabilidad como frecuencia en el límite", echo=FALSE, out.width="60%", fig.align='center'}
 knitr::include_graphics("shinyprob.png")
 ```
 
 
+La aplicación "Concurso de Monty Hall" es algo más compleja (véase la figura \@ref(fig:monty). 
+Está publicada en https://elcano.shinyapps.io/monty_hall/. Consta de cuatro paneles, en el primero de los cuales aparece la descripción del problema y la solución desde cuatro puntos de vista diferentes. El problema tiene una solución a priori contraintuitiva y sorprendente, que incluso después de la explicación puede plantear dudas (en [@YUSTE2011] se pueden encontrar algunas anécdotas incluso con reputados matemáticos). El estudiante puede jugar partidas una a una y ver el resultado de sus jugadas acumuladas. En cierto modo, es otra forma de comprobar empíricamente la probabilidad como frecuencia relativa de la anterior aplicación. Por último, en el panel de simulación se pueden realizar un número grande de jugadas y ver el resultado según la estrategia del jugador. Como resultado, se obtienen las frecuencias y también visualizaciones gráficas con animación de las simulaciones.
 
-# 3. RESULTADOS
+```{r monty, fig.cap="Aplicación para ilustrar la importancia de la probabilidad condicionada", echo=FALSE, out.width="60%", fig.align='center'}
+knitr::include_graphics("monty.png")
+```
+
+
+
+# RESULTADOS
 
 Los resultados que obtenemos en las clases son muy positivos. Los estudiantes pueden elegir cuáles son las opciones (no solo dos, sino más de dos, como por ejemplo en el lanzamiento de un dado) y comprueban con ejemplos más cercanos cómo la probabilidad “converge” a la probabilidad teórica, y esto después se traduce en que realizan los ejercicios con menos dudas.
 
 
 (meter lo que tenga de la encuesta a los de biología)
 
-# 4. CONCLUSIONES
+# CONCLUSIONES
 
 Es importante destacar que la metodología propuesta no es exclusiva para la enseñanza de la Estadística, sino que se puede aplicar a cualquier asignatura en la que se puedan utilizar datos, funciones matemáticas, gráficos, o simulación, y en las que la interacción del estudiante provoque distintos resultados que le ayuden a interiorizar los conceptos.
 
+integración continua
+
+mejorar aspecto
+
+servidor DSLAB
+
+versiones en español
+
 (expandir un poco)
+
+Un poco de autobombo: [@Cano2016]
 
 # REFERENCIAS
 
@@ -126,7 +144,7 @@ knitr::write_bib(c(
   .packages(), 
   'base',
   'bookdown', 'knitr', 'rmarkdown',
-  'shiny'
+  'shiny', 'rstudioapi'
 ), 'packages.bib')
 ```
  
